@@ -6,10 +6,17 @@ from haversine import haversine
 from time import time
 from numpy import genfromtxt
 import numpy as np
-
+import re
 
 start = time()
 x = genfromtxt(r"C:\\Users\\Ben Donnelly\\Desktop\\coordinates.txt", delimiter=',', dtype=None, usecols=np.arange(0, 2))
+for_later = {}
+with open('C:\\Users\\Ben Donnelly\\Desktop\\coordinates.txt', 'r') as f:
+    xi = (re.findall('[A-Za-z]+', f.read()))
+
+d = { i : xi[i] for i in range(0, len(xi) ) }
+# print(d)
+# quit()
 
 coordinates_list = []
 for i in x:
@@ -48,11 +55,12 @@ draw_networkx_edge_labels(G, pos, edge_labels=labels)
 
 draw_networkx_labels(G, pos, font_size=10, font_color='k')
 draw_networkx_nodes(G, pos, node_color='#14E032', alpha=1.0)
-plt.show()
+#plt.show()
 
 
 tour = [0] * 31
 count = 0
+county_nums = [0] * 31
 p = 0
 prev_node = 0
 while 0.0 in tour:
@@ -60,13 +68,16 @@ while 0.0 in tour:
     for i, j in G.adj[p].items():
         if j['weight'] < cost:
             cost = j['weight']
-            tour[count] = i
+            county_nums[count] = i
+            tour[count] = d[i]
             p = i
     count += 1
     G.remove_node(prev_node)
     prev_node = p
 
-
-print(0, tour, 0)
+tour.insert(0, "Dublin")
+tour.append("Dublin")
+print(tour)
+print(county_nums)
 end = time()
 print(end - start)
