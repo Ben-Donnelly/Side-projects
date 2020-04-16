@@ -1,0 +1,63 @@
+body
+{
+
+  background-image:url(https://www.irishrail.ie/media/intercity_route_map.jpg);
+  background-size:cover;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-size: 750px 750px;
+   background-position: 300px -10px;
+}
+
+td:hover {
+  background-color: #f5f5f5;
+}
+
+table.T1 {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  opacity : 80%;
+}
+
+.T1 td,
+.T1 th {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+.T1 td {
+  text-align: left;
+}
+
+.T1 th {
+  text-align: center;
+  background-color: #008000;
+  color : white;
+}
+
+tr:nth-child(odd) {
+    background-color: #D3D3D3;
+}
+tr:nth-child(even) {
+    background-color: #FFF;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  background: linear-gradient(green, orange);
+  border: none;
+  text-align: center;
+  font-size: 21px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: relative;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+}
+
