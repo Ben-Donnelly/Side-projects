@@ -1,7 +1,7 @@
 body
 {
 
-  background-image:url(https://www.irishrail.ie/media/intercity_route_map.jpg);
+  background-image:url("C:\\Users\\Ben Donnelly\\Downloads\\CS402_background.jpg");
   background-size:cover;
   background-attachment:fixed;
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@ tr:nth-child(even) {
   margin: 5px;
   position: relative;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: white;
 }
 
