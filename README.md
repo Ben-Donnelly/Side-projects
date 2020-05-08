@@ -1,7 +1,7 @@
 # Side-projects
 Side projects when I was bored or had an idea
 
-* *cognitive concentration*: 
+* _cognitive concentration_: 
 Fills out x * x square grid with numbers in range x * x (i.e. 5 would initialise 5 * 5 grid with numbers 1-25) Objective: Can print off and cross numbers off in order and time length taken, as time decreases increase size. This can help with concentration as it requires focus, memory e.t.c.
 
 * *Web Scraping Temperatures*: 
