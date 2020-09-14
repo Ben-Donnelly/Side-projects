@@ -1,0 +1,22 @@
+td:hover
+{
+  background-color: #f5f5f5;
+}
+
+table.T1
+{
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  opacity : 80%;
+}
+
+.T1 td
+{
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+  width: 25%;
+  height: 140px;
+  position: relative;
+}
