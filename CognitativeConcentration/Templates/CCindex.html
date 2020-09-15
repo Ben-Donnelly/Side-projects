@@ -1,40 +1,47 @@
 <html>
-<head>
+
+  <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CCstyle.css') }}">
-</head>
-<span id="timer">0</span> s
+  </head>
 
-  <table class='T1' id='myTable'>
-    <tbody id='body'>
-    {% for i in info %}
+  <body>
+    <div id="countdown"></div>
+    <span id="timer">0</span> s <button type="button" id="MyB">Start!</button>
+
+
+    <table class='T1' id='myTable'>
+      <tbody id='body'>
+        {% for i in info %}
         <tr>
-            <td>{{i.1}}</td>
-            <td>{{i.2}}</td>
-            <td>{{i.3}}</td>
-            <td>{{i.4}}</td>
+          <td>{{i.1}}</td>
+          <td>{{i.2}}</td>
+          <td>{{i.3}}</td>
+          <td>{{i.4}}</td>
         </tr>
-     <tr>
-            <td>{{i.5}}</td>
-            <td>{{i.6}}</td>
-            <td>{{i.7}}</td>
-            <td>{{i.8}}</td>
+        <tr>
+          <td>{{i.5}}</td>
+          <td>{{i.6}}</td>
+          <td>{{i.7}}</td>
+          <td>{{i.8}}</td>
         </tr>
-     <tr>
-            <td>{{i.9}}</td>
-            <td>{{i.10}}</td>
-            <td>{{i.11}}</td>
-            <td>{{i.12}}</td>
+        <tr>
+          <td>{{i.9}}</td>
+          <td>{{i.10}}</td>
+          <td>{{i.11}}</td>
+          <td>{{i.12}}</td>
         </tr>
-     <tr>
-            <td>{{i.13}}</td>
-            <td>{{i.14}}</td>
-            <td>{{i.15}}</td>
-            <td>{{i.16}}</td>
+        <tr>
+          <td>{{i.13}}</td>
+          <td>{{i.14}}</td>
+          <td>{{i.15}}</td>
+          <td>{{i.16}}</td>
         </tr>
-    {% endfor %}
-    </tbody>
+        {% endfor %}
+      </tbody>
 
-  </table>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-    <script src="{{url_for('static', filename='CCjs.js')}}"></script>
+    </table>
+  </body>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src="{{url_for('static', filename='CCjs.js')}}"></script>
+
 </html>

@@ -1,18 +1,23 @@
-td:hover
-{
+td:hover {
   background-color: #f5f5f5;
 }
 
-table.T1
-{
+#countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+
+
+table.T1 {
   font-family: sans-serif;
   border-collapse: collapse;
   width: 100%;
-  opacity : 80%;
+  opacity: 80%;
 }
 
-.T1 td
-{
+.T1 td {
   border: 1px solid #000;
   padding: 8px;
   text-align: center;
