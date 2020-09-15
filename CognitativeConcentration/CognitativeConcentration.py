@@ -27,5 +27,9 @@ def index():
     return render_template('CCindex.html', info=info)
 
 
+@app.route('/results')
+def res():
+    return render_template('results.html')
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
