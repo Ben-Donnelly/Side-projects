@@ -1,5 +1,9 @@
 //document.getElementById('myTable').style.filter = "blur(150px)";
 
+if(performance.navigation.type == 2)
+{
+    location.reload(true);
+}
 $(document).ready(function()
 {
   document.getElementById('myTable').style.filter = "blur(5px)";
@@ -7,6 +11,7 @@ $(document).ready(function()
 
 let func = function()
 {
+time_mappings = {3 : "Ready", 2 : "Set", 1 : "Go!"}
   var timeleft = 3;
   var downloadTimer = setInterval(function()
   {
@@ -19,7 +24,7 @@ let func = function()
     }
     else
     {
-     $("#countdown").html(timeleft);
+     $("#countdown").html(time_mappings[timeleft]);
       $("#countdown").fadeIn(0);
       $("#countdown").fadeOut(500);
     }

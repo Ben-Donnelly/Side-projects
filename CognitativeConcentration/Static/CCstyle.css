@@ -81,3 +81,52 @@ table td.crossed
 .button:active {
   box-shadow: 0 10px #999;
 }
+
+
+
+table.leaderboardClass {
+  margin-top:75px;
+  margin-left:0px;
+  font-family: sans-serif;
+  border-collapse: collapse;
+  left: 0;
+  width: 100%;
+  opacity: 85%
+}
+
+.leaderboardClass td,
+.leaderboardClass th {
+  border: 1px solid #FFFFFF;
+  padding: 8px;
+}
+.leaderboardClass tr {
+
+  background-color: #F0F3F4;
+  border: 1px solid #FFFFFF;
+  padding: 8px;
+  opacity: 0.9;
+}
+
+.leaderboardClass td {
+
+  text-align: left;
+}
+
+.leaderboardClass th {
+  text-align: center;
+  background-color: #D5D8DC;
+}
+
+.leaderboardClass tr:nth-child(2)
+{
+  background-color: #F7C80B;
+}
+.leaderboardClass tr:nth-child(3)
+{
+  background-color: #BDBBB3;
+    /*CC6A6A*/
+}
+.leaderboardClass tr:nth-child(4)
+{
+  background-color: #C09217 ;
+}
