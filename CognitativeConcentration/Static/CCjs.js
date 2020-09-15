@@ -14,11 +14,14 @@ let func = function()
     {
       document.getElementById("countdown").innerHTML = ""
       document.getElementById('myTable').style.filter = "unset";
+      clearInterval(downloadTimer);
       timer();
     }
     else
     {
-      document.getElementById("countdown").innerHTML = timeleft;
+     $("#countdown").html(timeleft);
+      $("#countdown").fadeIn(0);
+      $("#countdown").fadeOut(500);
     }
     timeleft -= 1;
   }, 1000);
@@ -43,19 +46,6 @@ function timer()
 }
 
 
-
-function ti()
-{
-  var table = document.getElementById('myTable');
-  for (var i = 0; i < table.rows.length; i++)
-  {
-    for (var j = 0; j < table.rows[i].cells.length; j++)
-    {
-      table.rows[i].cells[j].style["background-color"] = "orange";
-    }
-  }
-}
-
 count = 1;
 $("td").click(function()
 {
@@ -68,14 +58,12 @@ $("td").click(function()
       while (x < 3)
       {
         console.log(x);
-        $('#timer').fadeOut(500).fadeIn(500);
+        $('#timer').fadeOut(1000).fadeIn(1000);
         x++;
       }
     }
-    console.log(count);
-    $(this).css('backgroundColor', 'grey');
-    $(this).html('');
-
+//    console.log(count);
+       $(this).addClass("crossed");
     count++;
   }
 });
