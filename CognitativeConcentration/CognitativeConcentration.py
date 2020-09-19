@@ -1,11 +1,11 @@
 from random import randint
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
-def numbers():
+def numbers(num_nums=4):
     numbers = []
 
-    size = 4#int(input("size:"))
+    size = num_nums
     size **= 2
 
     count = 1
@@ -21,10 +21,25 @@ def numbers():
     return [d]
 
 
-@app.route('/')
+# @app.route('/')
+# def index():
+#     info = numbers()
+#     return render_template('CCindex.html', info=info[0])
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    info = numbers()
-    return render_template('CCindex.html', info=info)
+    if request.method == 'POST':
+        text = request.form['text']
+        print(text, type(text))
+        table_nums = int(text)
+
+        info = numbers(table_nums)
+    else:
+        info = numbers()
+        table_nums = 4
+
+    return render_template('CCindex.html', info=info[0], num_rows=table_nums)
+
 
 
 @app.route('/results')
