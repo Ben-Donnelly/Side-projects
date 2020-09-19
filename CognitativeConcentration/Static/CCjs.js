@@ -4,10 +4,7 @@ if(performance.navigation.type == 2)
 {
     location.reload(true);
 }
-$(document).ready(function()
-{
-  document.getElementById('myTable').style.filter = "blur(5px)";
-});
+
 
 let func = function()
 {
@@ -52,11 +49,12 @@ function timer()
 
 
 count = 1;
+p = document.getElementById('myTable').rows[0].cells.length;
 $("td").click(function()
 {
   if ($(this).text() == count)
   {
-    if (count == 16)
+    if (count == Math.pow(p, 2))
     {
       clearInterval(interval);
       x = 0

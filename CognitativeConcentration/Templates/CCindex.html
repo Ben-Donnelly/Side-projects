@@ -7,37 +7,32 @@
   </head>
 
   <body>
+  <form method="POST">
+    <input name="text">
+    <input type="submit">
+  </form>
     <div id="countdown"></div>
     <span id="timer">0</span> s <button type="button" id="MyB" class = 'button' onclick="style.display = 'none'">Start!</button>
-<button type="button" onclick="window.location.href='{{ url_for( 'res') }}';">Leader board</button>
+<button type="button" class="button" onclick="window.location.href='{{ url_for( 'res') }}';">Leader board</button>
 
     <table class='T1' id='myTable'>
       <tbody id='body'>
-        {% for i in info %}
-        <tr>
-          <td>{{i.1}}</td>
-          <td>{{i.2}}</td>
-          <td>{{i.3}}</td>
-          <td>{{i.4}}</td>
-        </tr>
-        <tr>
-          <td>{{i.5}}</td>
-          <td>{{i.6}}</td>
-          <td>{{i.7}}</td>
-          <td>{{i.8}}</td>
-        </tr>
-        <tr>
-          <td>{{i.9}}</td>
-          <td>{{i.10}}</td>
-          <td>{{i.11}}</td>
-          <td>{{i.12}}</td>
-        </tr>
-        <tr>
-          <td>{{i.13}}</td>
-          <td>{{i.14}}</td>
-          <td>{{i.15}}</td>
-          <td>{{i.16}}</td>
-        </tr>
+
+<!--      {% if num_rows is defined %}-->
+<!--          value of num_rows: {{ num_rows }}-->
+<!--      {% else %}-->
+<!--          num_rows = 4-->
+<!--      {% endif %}-->
+      {% set count = namespace(value=1) %}
+        {% for i in range(num_rows) %}
+          <tr>
+             {%- for j in range(num_rows) %}
+            {% set x = count.value %}
+                <td>{{ info[x] }}</td>
+            {% set count.value = count.value + 1 %}
+             {%- endfor %}
+          </tr>
+
         {% endfor %}
       </tbody>
 

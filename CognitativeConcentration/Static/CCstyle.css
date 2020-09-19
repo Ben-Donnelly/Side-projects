@@ -9,11 +9,17 @@ td:hover {
   margin: -25px 0 0 -25px;
 }
 
+/*table.T1
+{
+    filter: blur(5px);
+}*/
 
 table.T1 {
   font-family: sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   opacity: 80%;
 }
 
@@ -36,7 +42,6 @@ table td.crossed
    background-image: linear-gradient(to bottom right,  transparent calc(50% - 3px), red, transparent calc(50% + 3px));
    /*background-image: linear-gradient(to top right,  transparent calc(50% - 1px), red, transparent calc(50% + 1px));*/
 }
-
 
 .button {
   background: linear-gradient(green, darkgreen);
