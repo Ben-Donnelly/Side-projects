@@ -1,0 +1,137 @@
+td:hover {
+  background-color: #f5f5f5;
+}
+
+#countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+}
+
+/*table.T1
+{
+    filter: blur(5px);
+}*/
+
+table.T1 {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 80%;
+}
+
+.T1 td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: center;
+  width: 25%;
+  height: 140px;
+  position: relative;
+}
+
+#countdown
+{
+    font-size: 105px;
+}
+
+table td.crossed
+{
+   background-image: linear-gradient(to bottom right,  transparent calc(50% - 3px), red, transparent calc(50% + 3px));
+   /*background-image: linear-gradient(to top right,  transparent calc(50% - 1px), red, transparent calc(50% + 1px));*/
+}
+
+.button {
+  background: linear-gradient(green, darkgreen);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  transition: all 0.5s;
+  cursor: pointer;
+  transform: translatex(5px);
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 1s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:active {
+  box-shadow: 0 10px #999;
+}
+
+
+
+table.leaderboardClass {
+  margin-top:75px;
+  margin-left:0px;
+  font-family: sans-serif;
+  border-collapse: collapse;
+  left: 0;
+  width: 100%;
+  opacity: 85%
+}
+
+.leaderboardClass td,
+.leaderboardClass th {
+  border: 1px solid #FFFFFF;
+  padding: 8px;
+}
+.leaderboardClass tr {
+
+  background-color: #F0F3F4;
+  border: 1px solid #FFFFFF;
+  padding: 8px;
+  opacity: 0.9;
+}
+
+.leaderboardClass td {
+
+  text-align: left;
+}
+
+.leaderboardClass th {
+  text-align: center;
+  background-color: #D5D8DC;
+}
+
+.leaderboardClass tr:nth-child(2)
+{
+  background-color: #F7C80B;
+}
+.leaderboardClass tr:nth-child(3)
+{
+  background-color: #BDBBB3;
+    /*CC6A6A*/
+}
+.leaderboardClass tr:nth-child(4)
+{
+  background-color: #C09217 ;
+}
