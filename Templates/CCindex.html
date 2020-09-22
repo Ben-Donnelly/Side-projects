@@ -1,0 +1,62 @@
+<html>
+  <head>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CCstyle.css') }}">
+  </head>
+
+    <div class="about-cont">
+        <div class="about-bar"><span>About</span></div>
+    <div class="content">
+        <p>
+        This is what first sparked my interest in computer science. I had just finished a maths grind when I was 15 and
+        I told my tutor that I had a hard time concentrating for such a long time.
+        <br>
+        He told me of this "Cognitive concentration" game that will help to improve my focus. He explained that the idea
+        was to have a grid (start out with a 4x4) and randomly
+        <br>
+        have put the numbers 1-16 in them. The objective was to cross off the numbers in order and time yourself. If you
+        manage to get a time below the goal
+        <br>
+        (he gave me a goal of 20 seconds at the time), then you increase the grid size by 1. "Keep doing this
+        until you cant get below 20 seconds and then your goal is 25 seconds, always aim for 20".
+        <br>
+        I asked him how would I make the grids because I would know where the numbers are. He said to ask my dad and he
+        could do them or
+        <br>
+        "There are programs online you could use" he said, in passing, as he was walking out. This kept me up late that
+        thinking "How could a computer do that?", it was alien to me and I wanted to know more about computers and
+        how they work.
+        <br>
+        more information can be found
+        <a class="link" href="https://concentrationgrids.com/">Here</a> about the benefits of the game and how it works. Below is a
+        version that I made using python and flask. The code can be viewed
+        <a class="link" href="https://github.com/Ben-Donnelly/Side-projects/tree/master/CognitativeConcentration">Here</a>
+    </p>
+    </div>
+</div>
+
+  <form method="POST"> <input name="text" type="number" min="4" max="10"> <button type="submit" class = 'button'>Submit</button>
+  </form>
+    <div id="countdown"></div>
+    <span id="timer">0</span><span id ="secs">s</span><button type="button" id="MyB" class = 'button' onclick="style.display = 'none'">Start!</button>
+    <button type="button" class = 'button' onclick="window.location.href='{{ url_for( 'index') }}';">Try Again!</button>
+
+    <table class='T1' id='myTable' contenteditable="false">
+      <tbody id='body'>
+      {% set count = namespace(value=1) %}
+        {% for i in range(num_rows) %}
+          <tr>
+              {%- for j in range(num_rows) %}
+                  {% set x = count.value %}
+                    <td class = 'num'>{{ info[x] }}</td>
+                  {% set count.value = count.value + 1 %}
+             {%- endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </body>
+  <script src="{{url_for('static', filename='CCjs.js')}}"></script>
+</html>

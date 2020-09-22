@@ -1,10 +1,30 @@
 //document.getElementById('myTable').style.filter = "blur(150px)";
+var perfEntries = performance.getEntriesByType("navigation");
+//
+//
+//$('td').click(function () {
+//    alert("Clicked");
+//});
 
-if(performance.navigation.type == 2)
+$(document).ready(function()
 {
-    location.reload(true);
-}
+    $(".num").css("pointer-events","none");
+});
+//
+//$(document).ready(function(){
+//$(".num").addClass("avoid-clicks");
+//    $(".num").html('k')
+//  $('#MyB').on('click',function(){
+//    alert('class taken away');
+//    $(".num").css("pointer-events","auto");
+//  });
+//});
 
+
+//if (perfEntries[0].type === "back_forward") {
+//console.log("Back");
+////    location.reload(true);
+//}
 
 let func = function()
 {
@@ -17,13 +37,14 @@ time_mappings = {3 : "Ready", 2 : "Set", 1 : "Go!"}
       document.getElementById("countdown").innerHTML = ""
       document.getElementById('myTable').style.filter = "unset";
       clearInterval(downloadTimer);
+      $(".num").css("pointer-events","auto");
       timer();
     }
     else
     {
      $("#countdown").html(time_mappings[timeleft]);
       $("#countdown").fadeIn(0);
-      $("#countdown").fadeOut(500);
+      $("#countdown").fadeOut(1000);
     }
     timeleft -= 1;
   }, 1000);
@@ -62,6 +83,7 @@ $("td").click(function()
       {
         console.log(x);
         $('#timer').fadeOut(1000).fadeIn(1000);
+        $('#secs').fadeOut(1000).fadeIn(1000);
         x++;
       }
     }
@@ -71,3 +93,12 @@ $("td").click(function()
   }
 });
 
+$(".about-bar").click(function () {
+    $expandable = $(this);
+    $content = $expandable.next();
+    $content.slideToggle(500, function () {
+        $expandable.text(function () {
+            return $content.is(":visible") ? "Close" : "About";
+        });
+    });
+});
